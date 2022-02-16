@@ -71,7 +71,7 @@ while led<60:
 led = 0
 while led<360:
     for rows in range(6):
-        leds[led + rows*55] = (0,0,25)
+        leds[led] = (255,255,255)
     client.put_pixels(leds)
     time.sleep(.01)
     led = led + 1
