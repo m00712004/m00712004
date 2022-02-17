@@ -145,11 +145,6 @@ for led in range (54, 360, 61):
     time.sleep(0.01)
     client.put_pixels(leds)
 
-##for led in range (60, 366, 61):
-##    leds[led] = (255,255,255)
-##    time.sleep(0.01)
-##    client.put_pixels(leds)
-
 
 
 
