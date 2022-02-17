@@ -3,20 +3,26 @@ import time
 import random
 
 leds = [(0,0,0)]*360
-
 client = opc.Client('localhost:7890')
 client.put_pixels(leds)
 client.put_pixels(leds)
 
-leds[185] = [(20,20,20)]*1
+
 
 led = 0
 while led<60:
-    for led in range (51):
+    for led in range (48):
         leds = [(0,0,0)]*360
 
-
-
+        leds[57] = (255,255,255)
+        leds[115] = (255,255,255)
+        leds[119] = (255,255,255)
+        leds[177] = (255,255,255)
+        leds[235] = (255,255,255)
+        leds[239] = (255,255,255)
+        leds[297] = (255,255,255)
+        leds[355] = (255,255,255)
+        leds[359] = (255,255,255)
 
 # first line     
         leds[3+led] = (25,255,0)
@@ -24,9 +30,9 @@ while led<60:
         leds[5+led] = (25,255,0)
 # second line
         leds[62+led] = (25,255,0)
-        leds[63+led] = (255,255,255)
+        leds[63+led] = (255,20,25)
         leds[64+led] = (25,255,0)
-        leds[65+led] = (255,255,255)
+        leds[65+led] = (255,20,25)
         leds[66+led] = (25,255,0)
 # third line
         leds[121+led] = (25,255,0)
@@ -56,3 +62,9 @@ while led<60:
         client.put_pixels(leds)
         time.sleep(0.1)
     break
+
+
+leds[301] = (25,255,255)
+leds[302] = (25,255,255)
+leds[306] = (25,255,255)
+leds[307] = (25,255,255)

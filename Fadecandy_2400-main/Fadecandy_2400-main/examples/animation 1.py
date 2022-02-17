@@ -1,7 +1,7 @@
 import opc
 import time
 import random
-
+    
 leds = [(255,255,255)]*360
 
 client = opc.Client('localhost:7890')
@@ -75,3 +75,4 @@ while led<360:
     client.put_pixels(leds)
     time.sleep(.01)
     led = led + 1
+  
