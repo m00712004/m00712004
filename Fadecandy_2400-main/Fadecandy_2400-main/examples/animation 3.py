@@ -63,8 +63,13 @@ while led<60:
         time.sleep(0.1)
     break
 
+led = 0
+while led<60:
+    for rows in range(3):
+        leds[led+rows*60] = (200,0,0)
+    for rows in range(3,6):
+        leds[59-led + rows*60] = (rows*10,40,180)
+    client.put_pixels(leds)
+    time.sleep(.1)
+    led = led + 1
 
-leds[301] = (25,255,255)
-leds[302] = (25,255,255)
-leds[306] = (25,255,255)
-leds[307] = (25,255,255)
