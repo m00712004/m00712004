@@ -28,3 +28,4 @@ once a letter is selected the animation assigned to the string value will run.
 The user input is placed in a while loop so it can indefinetley ask the user 
 to select an animation to play rather than running the program continuously. 
 
+UnlistedVideo link: https://youtu.be/u8ZJhO2LGc8
