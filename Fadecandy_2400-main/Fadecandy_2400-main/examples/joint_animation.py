@@ -79,7 +79,7 @@ while True:
         client = opc.Client('localhost:7890')
 
         for item in enumerate(leds):
-            time.sleep(0.015)
+            time.sleep(0.02)
             if item[0]%2 == 0:
                 r, g, b = item[1]
                 r = r-200
