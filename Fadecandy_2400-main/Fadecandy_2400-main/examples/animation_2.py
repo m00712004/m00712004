@@ -6,7 +6,7 @@ leds=[(255,75,0)]*360
 client = opc.Client('localhost:7890')
 
 for item in enumerate(leds):
-    time.sleep(0.006)
+    time.sleep(0.01)
     if item[0]%2 == 0:
         r, g, b = item[1]
         r = r-200
