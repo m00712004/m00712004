@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import opc
 import time
 
@@ -7,33 +5,25 @@ leds=[(255,75,0)]*360
 
 client = opc.Client('localhost:7890')
 
-
-
-print (enumerate(leds))
 for item in enumerate(leds):
     time.sleep(0.006)
-    print (item)
     if item[0]%2 == 0:
-        #need to get values out of tuple
         r, g, b = item[1]
         r = r-200
         g = 25
         b = 5
        
-
-
-        #create changed tuple (uses some values from old and some new) 
         new_colour =(r,g,b)
         leds[item[0]]= new_colour
     client.put_pixels(leds)
     client.put_pixels(leds)
 
 client.put_pixels(leds)
-#need to send it twice if not constantly sending values 
-#due to interpolation setting on fadecandy
 client.put_pixels(leds)
 print (leds)
-#right to left
+
+
+#sweep from right to left
 led = 0
 while led<360:
     for rows in range(6):
@@ -41,7 +31,7 @@ while led<360:
     client.put_pixels(leds)
     time.sleep(.01)
     led = led + 1
-
+#cross from right to left
 for led in range (5,359,59):
     leds[led] = (255,255,255)
     time.sleep(0.01)
@@ -93,7 +83,7 @@ for led in range (59, 405, 59):
     client.put_pixels(leds)
 
 
-#left to right
+#cross from left to right
 
 for led in range (0,306,61):
     leds[led] = (255,255,255)
@@ -149,47 +139,3 @@ for led in range (54, 360, 61):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
